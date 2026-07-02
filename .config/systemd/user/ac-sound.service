@@ -1,0 +1,12 @@
+[Unit]
+Description=AC plug sound (polling)
+
+[Service]
+Type=simple
+ExecStart=/home/nebid/.local/bin/ac-sound.sh
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
+
