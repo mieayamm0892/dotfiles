@@ -1,0 +1,93 @@
+
+// FASTFETCH CONFIGURATION (FINAL UNIFIED BORDER & FULL WIDTH)
+// By jan-rex
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  
+  "logo": {
+    "padding": { "top": 3 },
+    "source": "/home/nebid/yukii.jpeg",
+    "type": "kitty",
+    "width": 35,
+    "height": 18,
+    "padding": {
+      "left": 4,
+      "right": 4
+    }
+  },
+  
+  "display": {
+    "separator": "",
+    "key": { "width": 13 },
+    "constants": [
+      "\u001b[48;2;43;43;69m", 
+      "\u001b[48;2;43;43;69m"
+    ]
+  },
+
+  "modules": [ 
+  { "type": "custom", "format": "\n" },
+  
+
+    // Top Border (Abu-abu / Bright Black)
+    { "type": "custom", "key": "{#90}{$1}╭───────────╮", "format": "{#90}{$2}───────────────────────────────────────────────────────────╮" },
+    
+    // User (Text Putih, Border Abu-abu)
+    { "type": "title", "key": "{#90}{$1}│ {#97}User     {#90}│", "format": "{$2} {#97}{user-name} {#90}[{home-dir}]{$2}                                                   {#90}│" },
+    
+    // Users
+    { "type": "users", "key": "{#90}{$1}│ {#97}Users    {#90}│", "format": "{$2} {#97}{1}@{host-name}{$2}                                                                 {#90}│" },
+    
+    // Date
+    { "type": "datetime", "key": "{#90}{$1}│ {#97}Date     {#90}│", "format": "{$2} {#97}{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}{$2}                                             {#90}│" },
+    
+    // Host (Cyan)
+    { "type": "title", "key": "{#90}{$1}│ {#36}Host     {#90}│", "format": "{$2} {#36}{host-name}{$2}                                                                     {#90}│" },
+     
+    // Machine
+    { "type": "host", "key": "{#90}{$1}│ {#97}Machine  {#90}│", "format": "{$2} {#97}{name} {#90}{version}{$2}                                                            {#90}│" },
+    
+    // OS (Tidak ada maxWidth, biarkan sepanjang apapun)
+    { "type": "os", "key": "{#90}{$1}│ {#97}OS       {#90}│", "format": "{$2} {#97}{pretty-name}{$2}                                                                      {#90}│" },
+    
+    // Kernel
+    { "type": "kernel", "key": "{#90}{$1}│ {#97}Kernel   {#90}│", "format": "{$2} {#97}{release}{$2}                                                                      {#90}│" },
+    
+    // Uptime
+    { "type": "uptime", "key": "{#90}{$1}│ {#97}Uptime   {#90}│", "format": "{$2} {#97}{days}d {hours}h {minutes}m{$2}                                                          {#90}│" },
+    
+    // CPU
+    { "type": "cpu", "key": "{#90}{$1}│ {#91}CPU      {#90}│", "format": "{$2} {#97}{name}{$2}                                                                            {#90}│" },
+    
+    // GPU
+    { "type": "gpu", "key": "{#90}{$1}│ {#91}GPU      {#90}│", "format": "{$2} {#97}{name}{$2}                                                                            {#90}│" },
+    
+    // Memory
+    { "type": "memory", "key": "{#90}{$1}│ {#91}Memory   {#90}│", "format": "{$2} {#97}{used} / {total} ({#90}{percentage}%){$2}                                   {#90}│" },
+    
+    // Disk (Fix format)
+    { "type": "disk", "key": "{#90}{$1}│ {#91}Disk     {#90}│", "format": "{$2} {#97}{size-used} / {size-total} ({#90}{size-percentage}){$2}                                           {#90}│" },
+    
+    // Power
+    { "type": "poweradapter", "key": "{#90}{$1}│ {#91}Power    {#90}│", "format": "{$2} {#97}{name}{$2}                                                            {#90}│" },
+    
+    // Terminal (Pink)
+    { "type": "terminal", "key": "{#90}{$1}│ {#95}Terminal {#90}│", "format": "{$2} {#97}{pretty-name} {#90}[{version}]{$2}                                            {#90}│" },
+    
+    // Font
+    { "type": "terminalfont", "key": "{#90}{$1}│ {#95}Font     {#90}│", "format": "{$2} {#97}{name} {#90}[{size}pt]{$2}                                             {#90}│" },
+    
+    // Shell
+    { "type": "shell", "key": "{#90}{$1}│ {#95}Shell    {#90}│", "format": "{$2} {#97}{exe-name}{$2}                                                             {#90}│" },
+    
+    // Local IP
+    { "type": "localip", "key": "{#90}{$1}│ {#94}Local IP {#90}│", "showIpv4": true, "showIpv6": false, "format": "{$2} {#97}{ipv4}{$2}                                           {#90}│" },
+    
+    // Public IP
+    { "type": "publicip", "key": "{#90}{$1}│ {#94}Pub IP   {#90}│", "format": "{$2} {#97}{ip} {#90}[{location}]{$2}                            {#90}│" },
+
+    // 
+    // Bottom Border
+    { "type": "custom", "key": "{#90}{$1}╰───────────╯", "format": "{#90}{$2}───────────────────────────────────────────────────────────┘" }
+  ]
+}
